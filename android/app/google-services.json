@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "480473106899",
+    "project_id": "whatchm-3c5e9",
+    "storage_bucket": "whatchm-3c5e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480473106899:android:4927e5c0cb04a66ab44726",
+        "android_client_info": {
+          "package_name": "com.example.watchm_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480473106899-9upo5q3ggc2a98ihah6makk56j8697to.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.watchm_app",
+            "certificate_hash": "b6e04f866d3d9251c629e745361b61ee68e7450c"
+          }
+        },
+        {
+          "client_id": "480473106899-v3gt247trm0dc2qc9pkuos4c32597mco.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDQ9wkfqCH0qq7oNQxTZsrfptKSm8B3X4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480473106899-v3gt247trm0dc2qc9pkuos4c32597mco.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
