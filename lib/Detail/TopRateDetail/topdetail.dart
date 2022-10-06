@@ -49,19 +49,6 @@ class _DetailtopState extends State<Detailtop> {
     });
   }
 
-  //Delete data
-  Future<void> deleteResult(int? id) async {
-    final db = await database;
-    await db.delete(
-      'results',
-      where: 'id = ?',
-      whereArgs: [id],
-    );
-    setState(() {
-      onthefav = false;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
