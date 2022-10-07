@@ -91,11 +91,11 @@ class _DetailtopState extends State<Detailtop> {
                 icon: onthefav
                     ? Icon(
                         Icons.favorite,
-                        color: Color.fromARGB(255, 20, 70, 206),
+                        color: Colors.red,
                       )
                     : Icon(
                         Icons.favorite_border,
-                        color: Color.fromARGB(255, 20, 70, 206),
+                        color: Colors.white,
                       )),
 
             // onPressed: () {

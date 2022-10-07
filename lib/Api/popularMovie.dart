@@ -38,7 +38,7 @@ class Results {
   String? originalLanguage;
   String? originalTitle;
   String? overview;
-  double? popularity;
+  dynamic? popularity;
   String? posterPath;
   String? releaseDate;
   String? title;
