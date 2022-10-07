@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:watchm_app/Api/toprate.dart';
@@ -34,6 +36,33 @@ class _DetailtopState extends State<Detailtop> {
       },
       version: 1,
     );
+    onthefav = await read(widget.results.title);
+    setState(() {});
+  }
+
+//Read
+  Future<bool> read(String? title) async {
+    final Database db = await database;
+    final data =
+        await db.query('results', where: "title = ?", whereArgs: [title]);
+    if (data.isNotEmpty) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  //delete
+  Future<void> delete(Results? results) async {
+    final db = await database;
+    await db.delete(
+      'results',
+      where: "title = ?",
+      whereArgs: [results!.title],
+    );
+    setState(() {
+      onthefav = false;
+    });
   }
 
 //Memasukkan data dari api ke database
@@ -57,15 +86,28 @@ class _DetailtopState extends State<Detailtop> {
           actions: [
             IconButton(
                 onPressed: () {
-                  //memanggil fungsi diatas
-                  insertApi(widget.results);
+                  onthefav ? delete(widget.results) : insertApi(widget.results);
                 },
-                icon: Icon(
-                  (onthefav == false)
-                      ? Icons.favorite_border_outlined
-                      : Icons.favorite,
-                  color: (onthefav == false) ? Colors.white : Colors.red,
-                )),
+                icon: onthefav
+                    ? Icon(
+                        Icons.favorite,
+                        color: Color.fromARGB(255, 20, 70, 206),
+                      )
+                    : Icon(
+                        Icons.favorite_border,
+                        color: Color.fromARGB(255, 20, 70, 206),
+                      )),
+
+            // onPressed: () {
+            //   //memanggil fungsi diatas
+            //   insertApi(widget.results);
+            // },
+            // icon: Icon(
+            //   (onthefav == false)
+            //       ? Icons.favorite_border_outlined
+            //       : Icons.favorite,
+            //   color: (onthefav == false) ? Colors.white : Colors.red,
+            // )),
           ],
           leading: GestureDetector(
             child: Icon(

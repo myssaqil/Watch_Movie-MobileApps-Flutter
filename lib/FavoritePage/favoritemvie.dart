@@ -105,7 +105,8 @@ class _FavmviepgeState extends State<Favmviepge> {
                       builder: (context) => Detailtop(
                             results: movifav[index],
                           )),
-                );
+                ).then((value) => initDb());
+                ;
               },
               child: Padding(
                 padding: const EdgeInsets.only(top: 5.0, left: 5.0, right: 5.0),
